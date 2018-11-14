@@ -1,6 +1,7 @@
 ---
 - hosts: master
   vars:
+    node_list: [ "black-pearl", "kubemaster"]
     k8s_mode: "teardown"
   roles:
     - ansible-role-k8s

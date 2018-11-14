@@ -1,6 +1,6 @@
 ---
 
-- hosts: all
+- hosts: master
   become: yes
   vars:
     docker_edition: 'ce'
@@ -18,3 +18,32 @@
   become: yes
   roles:
     - ansible-role-ruby
+
+- hosts: worker
+  become: yes
+  vars:
+    hostname: "{{ inventory_hostname }}"
+    home: "/home/pirate"
+  tasks:
+    - name: Ensure hostname set
+      shell: "hostnamectl set-hostname {{ inventory_hostname }}"
+      # hostname: name={{ inventory_hostname }}
+      when: not inventory_hostname is match('(\d{1,3}\.){3}\d{1,3}')
+    #   register: hostname
+    #   tags: hostname
+
+    - name: Ensure hostname init
+      shell: "device-init hostname set {{ inventory_hostname }}"
+
+    - name: Ensure hostname init
+      shell: "device-init hostname set {{ inventory_hostname }}"
+    
+    - name: Download Template kube-proxy arm 
+      template:
+        src: ./device-init.j2
+        dest: "/boot/device-init.yaml"
+    
+    - name: Ensure hostname init
+      become: yes
+      shell: "device-init -c /boot/device-init.yaml"
+    

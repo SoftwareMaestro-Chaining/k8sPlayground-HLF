@@ -10,3 +10,7 @@ deployHLF :
 		ansible-playbook ./playbook/hyperledger/playbook.deployHLFNetwork.yml -i inventory.ini
 deleteHLF :
 		ansible-playbook ./playbook/hyperledger/playbook.deleteHLFNetwork.yml -i inventory.ini
+ping:
+		ansible -m ping all -i inventory.ini
+down:
+		ansible-playbook ./playbook/k8s/playbook.down.yml -i inventory.ini

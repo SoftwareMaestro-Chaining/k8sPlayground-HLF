@@ -1,0 +1,10 @@
+#!/usr/bin/env ansible-playbook
+---
+- hosts: worker
+  tasks:
+    - name: "shutdown {{ ansible_host }} "
+      command: shutdown now 
+      ignore_errors: true
+      become: yes
+
+

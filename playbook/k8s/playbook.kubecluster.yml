@@ -5,6 +5,8 @@
   vars:
      k8s_mode: "master"
      nfs_exports: [ "/opt/share *(rw,sync,no_root_squash)" ]
+     node_arch: "arm"
+     pod_network: "weave"
   roles:
      - ansible-role-k8s
      - ansible-role-nfs
@@ -24,7 +26,7 @@
           path: /opt/share
           state: directory
      - name: nfs mount /opt/share
-       command: mount -o rw,nolock 192.168.99.20:/opt/share /opt/share
+       command: mount -o rw,nolock 192.168.31.200:/opt/share /opt/share
        become: yes
     
     
