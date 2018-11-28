@@ -18,7 +18,19 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     end
     kubemaster.vm.network "public_network", ip: "192.168.31.200"
     
+    
   end
+
+#  config.vm.define "db" do |db|
+#    db.vm.hostname = "db"
+#    db.vm.box = "ubuntu/bionic64"
+#    db.vm.network "private_network", ip: "192.168.99.30"
+#    db.vm.provision "shell", path: "provision.sh"
+#    db.vm.provider "virtualbox" do |vb|
+#      vb.memory = "1024"
+#      vb.cpus = 2
+#    end
+#  end
 
 #  config.vm.network "private_network", ip: "192.168.99.10"
 #  config.vm.network :forwarded_port, guest: 8001, host: 8001

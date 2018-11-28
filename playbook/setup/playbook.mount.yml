@@ -1,0 +1,18 @@
+---
+
+- hosts: worker
+  become: yes
+  roles:
+     - ansible-role-nfs
+  tasks:
+     - name: create share directory
+       file:
+          path: /opt/share
+          state: directory
+     - name: nfs mount /opt/share
+       shell: mount -o rw 192.168.31.200:/opt/share /opt/share
+       become: yes
+    
+      
+
+    

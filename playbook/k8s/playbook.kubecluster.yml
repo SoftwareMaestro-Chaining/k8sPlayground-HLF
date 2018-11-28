@@ -10,7 +10,6 @@
   roles:
      - ansible-role-k8s
      - ansible-role-nfs
-     - ansible-role-nodejs
 
 - hosts: worker
   become: yes
@@ -20,13 +19,4 @@
      - ansible-role-k8s
      - ansible-role-k8sHLF
      - ansible-role-nfs
-  tasks:
-     - name: create share directory
-       file:
-          path: /opt/share
-          state: directory
-     - name: nfs mount /opt/share
-       command: mount -o rw,nolock 192.168.31.200:/opt/share /opt/share
-       become: yes
-    
-    
+

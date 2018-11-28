@@ -1,0 +1,19 @@
+---
+
+- hosts: worker
+  become: yes
+  tasks:
+    # - name: "eth client go"
+    #   shell: "docker pull redtree941/eth-client-go:arm"
+    # - name: "boot node go"
+    #   shell: "docker pull redtree941/geth-node:arm"
+  
+    - name: "jupyter"
+      shell: "docker pull redtree941/jupyter:arm"
+      
+    - name: "remix"
+      shell: "docker pull redtree941/remix-ide:arm"
+      
+      
+
+    

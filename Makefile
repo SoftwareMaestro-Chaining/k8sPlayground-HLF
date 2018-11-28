@@ -1,5 +1,5 @@
 setup:
-		ansible-playbook playbook/k8s/playbook.setup.yml -i inventory.ini
+		ansible-playbook playbook/setup/playbook.setup.yml -i inventory.ini
 cluster:
 		ansible-playbook ./playbook/k8s/playbook.kubecluster.yml -i inventory.ini
 clean:
@@ -14,3 +14,9 @@ ping:
 		ansible -m ping all -i inventory.ini
 down:
 		ansible-playbook ./playbook/k8s/playbook.down.yml -i inventory.ini
+mount:
+		ansible-playbook playbook/setup/playbook.mount.yml -i inventory.ini
+installImage:
+		ansible-playbook playbook/setup/playbook.image.install.yml -i inventory.ini
+removeImage:
+		ansible-playbook playbook/setup/playbook.image.remove.yml -i inventory.ini

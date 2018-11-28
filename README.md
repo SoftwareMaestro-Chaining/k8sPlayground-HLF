@@ -1,9 +1,9 @@
-# HFL-Playground-in-k8s
+# k8sPlayground-rpi
 
-HFL-Playground-in-k8s is based 
+k8sPlayground-rpi is based 
 [k8sPlayground](https://github.com/redtree0/k8sPlayground) .
 
-HFL-Playground-in-k8s  sets up a kubernetes cluster on three VirtualBox virtual machines (one master and two workers) running Ubuntu 18.04 LTS using [kubeadm](https://kubernetes.io/docs/setup/independent/create-cluster-kubeadm/).
+k8sPlayground-rpi  sets up a kubernetes cluster on three VirtualBox virtual machines (one master and two workers) running Ubuntu 18.04 LTS using [kubeadm](https://kubernetes.io/docs/setup/independent/create-cluster-kubeadm/).
 
 ### Change Log
 * k8s specific version = 1.11.0

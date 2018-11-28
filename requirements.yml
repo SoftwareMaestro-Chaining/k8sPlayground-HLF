@@ -10,3 +10,6 @@
   version: master
 - src: git+https://github.com/geerlingguy/ansible-role-ruby.git
   version: master
+- src: git+https://github.com/lesmyrmidons/ansible-role-mongodb.git
+  version: master
+  
